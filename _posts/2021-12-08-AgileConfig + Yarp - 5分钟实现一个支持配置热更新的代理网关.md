@@ -1,4 +1,4 @@
-YARP 是微软开源的一个反向代理项目，英文名叫 Yet Another Reverse Proxy 。所谓反向代理最有名的那就是 nginx 了，没错 YARP 也可以用来完成 nginx 的大部分功能，比如根据不一样的域名代理到不一样的后端服务上。
+YARP 是微软开源的一个反向代理项目，英文名叫 Yet Another Reverse Proxy 。所谓反向代理最有名的那就是 nginx 了，没错 YARP 也可以用来完成 nginx 的大部分功能，比如根据不一样的域名代理到不一样的后端服务上。既然它可以做反向代理，那么其实也就可以做服务网关了，类似 Ocelot ，当然缺少部分功能，比如限流降级等。Anyway ，今天先来体验一下。
 ## 运行 YARP
 YARP 使用起来非常简单，它只是一个类库而已。我们新建一个 ASP.NET Core 的空网站。然后使用 nuget 安装 Yarp.ReverseProxy 。
 ```
