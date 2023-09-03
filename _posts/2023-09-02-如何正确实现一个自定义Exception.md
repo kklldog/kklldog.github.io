@@ -1,7 +1,7 @@
-最近在公司的项目中，编写了几个自定义的 Exception 类。提交 PR 的时候，sonarqube 提示这几个自定义异常不符合 ISerializable patten. 花了点时间稍微研究了一下，把这个问题解了。今天在此记录一下，可能大家都会忽略。
+最近在公司的项目中，编写了几个自定义的 Exception 类。提交 PR 的时候，sonarqube 提示这几个自定义异常不符合 ISerializable patten. 花了点时间稍微研究了一下，把这个问题解了。今天在此记录一下，可能大家都会帮助到大家。
 
 ## 自定义异常
-编写一个自定义的异常，继承自 Exception，其中定义一个 ErrorCode 来存储异常编号。平平无奇的一个类，太常见了。大家觉得有没有什么问题？
+编写一个自定义的异常，继承自 Exception，其中定义一个 `ErrorCode` 来存储异常编号。平平无奇的一个类，太常见了。大家觉得有没有什么问题？
 ```
     [Serializable]
     public class MyException : Exception
@@ -34,20 +34,18 @@
             Assert.AreEqual(orignalException.ErrorCode, newException.ErrorCode);
         }
 ```
-这个测试主要是对一个 MyException 的实例使用 BinaryFormatter 进行序列化，然后反序列化成一个新的对象。将新旧两个对象的 ErrorCode 跟 Message 字段进行断言，也很简单。    
+这个测试主要是对一个 MyException 的实例使用 `BinaryFormatter` 进行序列化，然后反序列化成一个新的对象。将新旧两个对象的 `ErrorCode` 跟 `Message` 字段进行断言，也很简单。    
 让我们运行一下这个测试，很可惜失败了。测试用例直接抛了一个异常，大概是说找不到序列化构造器。
 ![](https://static.xbaby.xyz/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230902171759.png)
 
 ## Designing Custom Exceptions Guideline
 
-简单的搜索了一下，发现微软有对于设计自定义 Exception 的 
+简单的搜索了一下，发现微软有对于自定义 Exception 的 
 [Designing Custom Exceptions
 ](https://learn.microsoft.com/zh-cn/previous-versions/dotnet/netframework-4.0/ms229064(v=vs.100)?redirectedfrom=MSDN) 。  
 总结一下大概有以下几点：     
 
 * 一定要从 System.Exception 或其他常见基本异常之一派生异常。
-
-* 请注意，捕捉和引发标准异常类型 具有一个指南，指出不应从 ApplicationException 派生自定义异常。
 
 * 异常类名称一定要以后缀 Exception 结尾。
 
@@ -104,7 +102,7 @@ public class NewException : BaseException, ISerializable
 
     }
 ```
-很可惜按照微软的 guideline 单元测试还是没通过。获取 Message 字段的时候会直接 throw 一个 Exception。   
+很可惜按照微软的 guideline 单元测试还是没通过。获取 `Message` 字段的时候会直接 throw 一个 Exception。   
 ![](https://static.xbaby.xyz/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230902173107.png)   
 那么到底该怎么实现呢？
 ## 正确的方式
@@ -145,7 +143,7 @@ public class NewException : BaseException, ISerializable
         }
     }
 ```
-在序列化构造器里从 SerializationInfo 对象里恢复 ErrorCode 的值。调用 base 的构造可以确保基类的 Message 字段被正确的还原。这里与其说是序列化构造器不如说是反序列化构造器，因为这个构造器会在反序列化恢复成对象的时候被调用。
+在序列化构造器里从 `SerializationInfo` 对象里恢复 `ErrorCode` 的值。调用 base 的构造可以确保基类的 `Message` 字段被正确的还原。这里与其说是序列化构造器不如说是反序列化构造器，因为这个构造器会在反序列化恢复成对象的时候被调用。
 ```
    protected MyException(SerializationInfo info, StreamingContext context): base(info, context)
         {
@@ -153,7 +151,7 @@ public class NewException : BaseException, ISerializable
             ErrorCode = info.GetString("ErrorCode");
         }
 ```
-这个 GetObjectData 方法是 ISerializable 接口提供的方法，所以基类里肯定有实现。我们的子类需要 override 它。把自己需要序列化的字段添加到 SerializationInfo 对象中，这样在上面反序列化的时候确保可以把字段的值给恢复回来。记住不要忘记调用 base.GetObjectData(info, context),  确保基类的字段数据能正确的被序列化。
+这个 `GetObjectData` 方法是 `ISerializable` 接口提供的方法，所以基类里肯定有实现。我们的子类需要 `override` 它。把自己需要序列化的字段添加到 `SerializationInfo` 对象中，这样在上面反序列化的时候确保可以把字段的值给恢复回来。记住不要忘记调用 `base.GetObjectData(info, context)`,  确保基类的字段数据能正确的被序列化。
 ```
     public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -171,13 +169,13 @@ public class NewException : BaseException, ISerializable
 ![](https://static.xbaby.xyz/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230903153301.png)
 
 ## 总结
-自定义异常是大家日常编码过程中非常常见的操作。但是看了要写好一个自定义异常类也不是那么简单。总结一下需要注意以下几点：
+自定义异常是大家日常编码过程中非常常见的操作。但是看来要写好一个自定义异常类也不是那么简单。总结一下需要注意以下几点：
 1. 添加 [Serializable] Attribute
 2. 遵守微软的 guideline，特别是构造器部分 [Designing Custom Exceptions Guideline
 ](https://learn.microsoft.com/zh-cn/previous-versions/dotnet/netframework-4.0/ms229064(v=vs.100)?redirectedfrom=MSDN)
 3. 在序列化构造器对字段值进行恢复，不要忘记调用基类的序列化构造器
-4. 重写 GetObjectData 方法，把需要序列化的字段添加到 SerializationInfo 对象上，同样不要忘记调用基类的 GetObjectData。   
-这个问题虽然在自定义 Exception 上暴露出来，其实可以推广到所有实现 ISerializable 接口的类都需要注意 3，4 两点。 
+4. 重写 `GetObjectData` 方法，把需要序列化的字段添加到 `SerializationInfo` 对象上，同样不要忘记调用基类的 `GetObjectData`   
+这个问题虽然在自定义 Exception 上暴露出来，其实可以推广到所有实现 `ISerializable` 接口的类都需要注意 3，4 两点。 
 
 ## 关注我的公众号一起玩转技术   
 
