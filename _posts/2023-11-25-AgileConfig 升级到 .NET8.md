@@ -1,3 +1,4 @@
+Hello 大家好。本月圈子里最大的事莫过于 .NET8 正式 release。群友们都在适配 .NET8。抽个周末我也把 AgileConfig 升级到了 .NET8。下面把升级的过程简单记录一下，其中有个小坑，对大家升级的时候可能有所帮助。
 ## 升级
 * 升级 .NET8   
 修改所有项目的目标框架为 .NET8.0
@@ -30,7 +31,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ```
 把 6 改成 8，其他不用改，超级简单。    
 
-通过以上操作，在本地运行没有问题，打包成镜像后在本地 docker desktop 环境下跑也没问题。但是发布到服务器上用镜像跑缺报错：`Failed to create CoreCLR, HRESULT: 0x80070008`
+通过以上操作，在本地运行没有问题，打包成镜像后在本地 docker desktop 环境下跑也没问题。但是发布到服务器上用镜像跑缺报错：`Failed to create CoreCLR, HRESULT: 0x80070008`    
 ![](https://static.xbaby.xyz/微信截图_20231124140704.png
 )
 警告排查是由于低版本的 docker engine 与某些 ubuntu 的镜像不兼容，需要在 docker run 的时候添加参数。
