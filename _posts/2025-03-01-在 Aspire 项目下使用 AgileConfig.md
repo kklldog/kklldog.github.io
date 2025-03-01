@@ -24,12 +24,12 @@
 ![](https://static.xbaby.xyz/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250301150900.png)
 
 
-### 在 AppHost 项目安装包
+### 在 AppHost 项目上使用 AgileConfig
 
 ```
 dotnet add package AgileConfig.Aspire.Hosting --version 1.0.0
 ```
-这个包是 AgileConfig 服务端的一个扩展。使用它配合 Aspire 可以直接启动 AgileConfig 容器并且简单配置它。
+首先安装 AgileConfig.Aspire.Hosting。 这个包是 AgileConfig 服务端的一个扩展。使用它配合 Aspire 可以直接启动 AgileConfig 容器并且简单配置它。
 
 安装完后，我们在 Program 下添加如下代码：
 
@@ -104,7 +104,7 @@ WaitFor()：确保被依赖的服务启动后再启动当前服务。
 
 ![](https://static.xbaby.xyz/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250301153016.png)
 
-## 在客户端项目上使用 AgileConfig.Client
+### 在客户端项目上使用 AgileConfig.Client
 
 要连接 AgileConfig 服务端，我们需要在客户端项目添加新的包引用：
 
