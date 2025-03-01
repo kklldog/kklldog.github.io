@@ -1,9 +1,9 @@
 ## 什么是 Aspire
 
 
-.NET Aspire 是一组工具、模板和包，用于构建易于监控的、可投入生产的应用程序。.NET Aspire 通过一系列 NuGet 包交付，这些包通过启动或解决现代应用开发中的特定问题来提升开发效率。 如今的应用通常使用大量服务，例如数据库、消息传送和缓存，其中许多服务通过 .NET.NET Aspire 集成得到支持。    
+.NET Aspire 是一组工具、模板和包，用于构建易于监控的、可投入生产的应用程序。.NET Aspire 通过一系列 NuGet 包交付，这些包通过启动或解决现代应用开发中的特定问题来提升开发效率。 如今的应用通常使用大量服务，例如数据库、消息传送和缓存，其中许多服务通过 .NET Aspire 集成得到支持。    
 Aspire 是微软发布的一项新技术。最近社区也有人跟我提需求说 AgileConfig 要支持 Aspire。   
-因为这不是 Aspire 的介绍文章，所以不过多表述。想要了解看以下文档：
+因为这不是 Aspire 的介绍文章，所以不过多表述。想要了解可参考以下文档：
 https://learn.microsoft.com/zh-cn/dotnet/aspire/get-started/aspire-overview
 
 ## 使用 AgileConfig 的传统方式
@@ -56,8 +56,8 @@ var webFrontend = builder.AddProject<Projects.AspireProjectWithAgileConfig_Web>(
 apiService.WithReference(agileConfig_apiservice); // apiservice 项目引用 agileConfig_apiservice 应用
 apiService.WaitFor(agileConfig); // apiservice 项目等待 agileConfig container 启动后再启动自己
 
-webFrontend.WithReference(agileConfig_webfrontend);  // apiservice 项目引用 agileConfig_webfrontend 应用
-webFrontend.WaitFor(agileConfig); // webFrontend 项目等待 apiservice container 启动后再启动自己
+webFrontend.WithReference(agileConfig_webfrontend);  // webFrontend 项目引用 agileConfig_webfrontend 应用
+webFrontend.WaitFor(agileConfig); // webFrontend 项目等待 agileConfig container 启动后再启动自己
 
 webFrontend.WithReference(apiService);
 webFrontend.WaitFor(apiService);
@@ -123,7 +123,7 @@ dotnet add package AgileConfig.Client.Aspire --version 1.0.0
 ```
 using Aspire.AgileConfig.Client;
 
-var appName = "apiService";
+var appName = "apiservice";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -159,7 +159,7 @@ builder.Host.UseAspireAgileConfig(appName);
 
 ## 总结
 
-以上我们通过一个简单的示例演示了在 Aspire 下如何使用 AgileConfig。跟传统方案比起来，你不在需要关心：如何使用 docker 运行 AgileConfig 的服务端，不在需要关心如何在 appsettings 下添加 AgileConfig 的相关配置。
+以上我们通过一个简单的示例演示了在 Aspire 下如何使用 AgileConfig。跟传统方案比起来，你不再需要关心：如何使用 docker 运行 AgileConfig 的服务端，不再需要关心如何在 appsettings 下添加 AgileConfig 的相关配置。
 可以看到过程还是非常丝滑的。
 
 源代码在这：
