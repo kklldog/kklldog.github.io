@@ -2,6 +2,7 @@
 
 
 .NET Aspire 是一组工具、模板和包，用于构建易于监控的、可投入生产的应用程序。.NET Aspire 通过一系列 NuGet 包交付，这些包通过启动或解决现代应用开发中的特定问题来提升开发效率。 如今的应用通常使用大量服务，例如数据库、消息传送和缓存，其中许多服务通过 .NET.NET Aspire 集成得到支持。    
+Aspire 是微软发布的一项新技术。最近社区也有人跟我提需求说 AgileConfig 要支持 Aspire。   
 因为这不是 Aspire 的介绍文章，所以不过多表述。想要了解看以下文档：
 https://learn.microsoft.com/zh-cn/dotnet/aspire/get-started/aspire-overview
 
