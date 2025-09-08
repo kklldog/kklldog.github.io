@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "SQL Server in Docker 还原数据库"
+---
+
 # SQL Server in Docker 还原数据库
 上一会演示了如果在Docker环境下安装SQL Server，这次我们来演示下如何还原一个数据库备份文件到数据库实例上。   
 ## 使用winscp上传bak文件到linux服务器
