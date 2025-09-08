@@ -1,4 +1,5 @@
 ---
+categories: [技术分享]
 layout: post
 title:  "SQL Server in Docker 还原数据库"
 ---

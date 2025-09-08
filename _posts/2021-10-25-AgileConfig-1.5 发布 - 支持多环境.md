@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title:  "AgileConfig 1.5 发布 - 支持多环境"
+tags: [AgileConfig, 配置管理, 多环境]
+---
+
 AgileConfig 从发布到现在，收到不同学的 issue 说需要多环境的支持。也就是一个应用在不同的环境下可以配置不同的配置项。这是一个非常有用的功能，就跟我们开发的时候会设置多个 appsettings.json 文件一样，比如 appsettings.development.json 、appsetting.production.json 等等。那么这次 1.5 版本就为大家带来了这个功能。   
 下面介绍下如何使用多环境配置功能。
 
