@@ -53,7 +53,7 @@ builder.Host.UseAgileConfig();
  "AgileConfig": {
     "appId": "test_app",
     "secret": "test_app",
-    "nodes": "http://agileconfig_server.xbaby.xyz/",
+    "nodes": "https://agileconfig-server.xbaby.xyz/",
     "name": "client123",
     "tag": "tag123",
 
@@ -160,7 +160,7 @@ AgileConfig 其实还实现了第三种方式：
 
 ✨✨✨Github地址：[https://github.com/dotnetcore/AgileConfig](https://github.com/dotnetcore/AgileConfig)  开源不易，欢迎star✨✨✨   
 
-演示地址：[http://agileconfig_server.xbaby.xyz/](http://agileconfig_server.xbaby.xyz/)  超级管理员账号：admin 密码：123456   
+演示地址：[https://agileconfig-server.xbaby.xyz/](https://agileconfig-server.xbaby.xyz/)  超级管理员账号：admin 密码：123456   
 
 ## 关注我的公众号一起玩转技术   
 

@@ -52,7 +52,7 @@ Install-Package AgileConfig.Client -Version 1.2.1
 
 ✨✨✨Github地址：[https://github.com/dotnetcore/AgileConfig](https://github.com/dotnetcore/AgileConfig)  开源不易，欢迎star✨✨✨   
 
-演示地址：[http://agileconfig_server.xbaby.xyz/](http://agileconfig_server.xbaby.xyz/)  超级管理员账号：admin 密码：123456   
+演示地址：[https://agileconfig-server.xbaby.xyz/](https://agileconfig-server.xbaby.xyz/)  超级管理员账号：admin 密码：123456   
 
 ## 关注我的公众号一起玩转技术   
 
