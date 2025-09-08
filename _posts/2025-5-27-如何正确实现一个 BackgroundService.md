@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "如何正确实现一个 BackgroundService"
+tags: [.NET, BackgroundService]
+---
+
 相信大家都知道如何在 .NET 中执行后台（定时）任务。首先我们会选择实现 IHostedService 接口或者继承BackgroundService 来实现后台任务。然后注册到容器内，然后注册到容器内，之后这些后台任务 service 就会自动被 触发（trigger）。本文不是初级的入门教程，而是试图告诉读者一些容易被忽略的细节。
 
 ## IHostedService

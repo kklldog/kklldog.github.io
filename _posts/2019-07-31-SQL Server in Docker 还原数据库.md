@@ -1,7 +1,8 @@
 ---
 categories: [技术分享]
 layout: post
-title:  "SQL Server in Docker 还原数据库"
+title: "SQL Server in Docker 还原数据库"
+tags: [SQL Server, Docker, 数据库还原, 容器化, Linux]
 ---
 
 # SQL Server in Docker 还原数据库

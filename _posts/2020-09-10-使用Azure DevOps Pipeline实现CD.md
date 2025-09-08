@@ -1,3 +1,9 @@
+---
+categories: [技术分享]
+layout: post
+title: "使用 Azure DevOps Pipeline 实现 CD"
+tags: [Azure, DevOps, Pipeline, CD, 技术分享]
+---
 
 上一次我们讲了使用Azure DevOps Pipeline实现.Net Core程序的CI。这次我们来演示下如何使用Azure DevOps实现.Net Core程序的CD。
     

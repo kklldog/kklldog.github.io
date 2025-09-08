@@ -1,3 +1,9 @@
+---
+categories: [技术分享]
+layout: post
+title: "LongRunningTask-正确用法"
+tags: [.NET, Task]
+---
 
 在上一篇文章《如何正确实现一个 BackgroundService》中有提到 `LongRunning` 来优化后台任务始终保持在同一个线程上。
 ```csharp

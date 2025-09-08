@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "Azure Cosmos DB 介绍"
+tags: [Azure, Cosmos DB, 数据库, 技术分享, 云服务]
+---
+
 Azure Cosmos DB 是 Microsoft 提供的全球分布式多模型数据库服务。Cosmos DB是一种NoSql数据库，但是它兼容多种API。它支持SQL, MongoDB、Cassandra或 Gremlin，你可以挑选自己喜欢的方式进行存储跟访问。
 ## 主要优势
 ### 统包式全局分发

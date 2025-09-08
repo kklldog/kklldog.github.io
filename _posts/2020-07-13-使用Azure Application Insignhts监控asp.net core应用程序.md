@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "使用 Azure Application Insights 监控 ASP.NET Core 应用程序"
+tags: [Azure, Application Insights, ASP.NET Core, 技术分享, 监控]
+---
+
 Application Insignhts是微软开发的一套监控程序。他可以对线上的应用程序进行全方位的监控，比如监控每秒的请求数，失败的请求，追踪异常，对每个请求进行监控，从http的耗时，到SQL查询的耗时，完完整整的被记录下来。当对程序进行优化跟排错时非常好使。它原来是visualstudio online的一个服务，现在合并进了Azure，作为Azure Monitor的一个组件。虽然合并进了Azure，但是Application Insignhts还是免费的。    
 
 ## 什么是Application Insignhts

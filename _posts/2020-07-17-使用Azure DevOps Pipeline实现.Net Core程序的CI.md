@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "使用 Azure DevOps Pipeline 实现 .Net Core 程序的 CI"
+tags: [Azure, DevOps, Pipeline, .Net Core, 技术分享]
+---
+
 上次介绍了Azure Application Insights，实现了.net core程序的监控功能。这次让我们来看看Azure DevOps Pipeline功能。Azure DevOps Pipeline 是Azure DevOps里面的一个组件，对于12个月试用账号同样永久免费。
     
 ![Uyf6xI.png](https://s1.ax1x.com/2020/07/17/Uyf6xI.png)

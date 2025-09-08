@@ -1,6 +1,10 @@
+---
 categories: [技术分享]
 layout: post
-title:  ""
+title: "试用 GitHub Packages 功能"
+tags: [GitHub, Packages, 软件包管理, 技术分享, 开源]
+---
+
 前几天微软收购npm的新闻对于软粉来收很是振奋。微软收购npm很可能是为了加强Github Packages。目前Github，Typescript，VSCode，npm这些开源社区的重磅工具全部都在微软旗下，显示出了微软对开源的态度，微软已经不是以前那个封闭的微软。Github推出Github Packages功能有一段时间了，一直没使用过，今天有空打算折腾一下，体验一下。
 ## 什么是Github Packages
 Github Packages是一个包承载服务，它完全跟Github集成。Github Packages使你的源码和包在同一个地方进行统一的管理，使你可以集中的在Github上开发跟发布。你可以发布公共包（public packages）跟所有人分享，也可以发布私有包（private packages）提供给个人或者组织使用。以上是对官方文档的简单翻译。说简单点就是以前你代码是在Github，但是包可能是在npm，maven或者nuget上，现在你在Github上传代码后还可以直接把包也上传到Github，方便统一管理，发布。

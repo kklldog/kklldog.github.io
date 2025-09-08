@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "使用 Azure Function 玩转 Serverless"
+tags: [Azure, Function, Serverless, 技术分享, 云计算]
+---
+
 ## Serverless&Azure Functions
 通过无服务器计算，开发者无需管理基础结构，从而可以更快构建应用程序。通过无服务器应用程序，将由云服务提供商自动预配、缩放和管理运行代码所需的基础结构。
 

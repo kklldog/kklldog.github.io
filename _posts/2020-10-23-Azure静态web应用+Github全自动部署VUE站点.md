@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "Azure 静态 Web 应用 + GitHub 全自动部署 VUE 站点"
+tags: [Azure, 静态 Web 应用, GitHub, VUE, 技术分享]
+---
+
 ## 什么事Azure静态web应用
 Azure 静态 Web 应用是一种服务，可从 GitHub 存储库自动构建完整的堆栈 Web 应用，并将其部署到 Azure，目前它还是预览版。   
 ![BAJAC4.md.png](https://s1.ax1x.com/2020/10/23/BAJAC4.md.png)   

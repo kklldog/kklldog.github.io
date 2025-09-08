@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "不用虚机不用 Docker 使用 Azure 应用服务部署 ASP.NET Core 程序"
+tags: [Azure, 应用服务, ASP.NET Core, 技术分享, 部署]
+---
+
 一般我们写好了应用程序想要部署发布它，要么发布到物理机，要么发布到虚拟机，要么发布到容器来运行它。现在有了Azure应用服务，我们可以完全不用管这些东西，只管写好自己的代码，然后使用VisualStudio的发布功能就可以一键部署了。如果你觉得性能不够用了还可以自动扩容，弹性伸缩。
 ## 应用服务概述
 Azure 应用服务是一项基于 HTTP 的服务，用于托管 Web 应用程序、REST API 和移动后端 。 可以使用 .NET、NET Core、Java、Ruby、Node.js、PHP 或 Python 等偏好的语言进行开发。

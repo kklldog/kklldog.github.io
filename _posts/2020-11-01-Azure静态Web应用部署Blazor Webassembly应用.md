@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "Azure 静态 Web 应用部署 Blazor WebAssembly 应用"
+tags: [Azure, 静态 Web 应用, Blazor, WebAssembly, 技术分享]
+---
+
 上一次演示了如何使用Azure静态web应用部署VUE前端项目（[使用 Azure静态web应用+Github全自动部署VUE站点](https://www.cnblogs.com/kklldog/p/azure-static-webapp-vue.html)）。我们知道静态web应用支持VUE，react，angular等项目的部署。除了支持这些常见前端框架，静态web应用同样支持微软推出的最新的前端框架Blazor Webassembly。今天就来演示下如何通过静态web应用部署Blazor项目。
 ## 新建blazor项目
 使用VS新建一个blazor项目，因为是演示项目所以啥都不用改。

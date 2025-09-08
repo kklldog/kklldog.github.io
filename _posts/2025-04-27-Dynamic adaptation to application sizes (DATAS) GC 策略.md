@@ -1,3 +1,9 @@
+---
+categories: [技术分享]
+layout: post
+title: "Dynamic adaptation to application sizes (DATAS) GC 策略"
+tags: [.NET, GC, DATAS]
+---
 
 现在大家的 .NET 程序基本都部署在如 K8S 这种容器化场景下。出于节约资源的考虑，往往我们还会限制每个实例占用的资源。不知道大家发现没有，在一些高并发的场景下，我们的程序会占用非常多的内存，内存迟迟不释放，在某些极端情况下甚至会发生 OOM 。如果你搜索这个问题，大概率会找到一个答案，那就是在一些资源有限的环境请把 GC 改成 workstation 模式。更改为 workstation 模式后，内存占用高的情况确实有所好转，但是同时也会影响服务的吞吐量。    
 到了 .NET8 其实我们还有另外一个 GC 的策略可以选择，那就是 DATAS - Dynamic adaptation to application sizes 。它可以帮我们在内存占用跟吞吐量之间找到一个平衡。   

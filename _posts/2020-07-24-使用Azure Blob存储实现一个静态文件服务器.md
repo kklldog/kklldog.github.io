@@ -1,3 +1,10 @@
+---
+categories: [技术分享]
+layout: post
+title: "使用 Azure Blob 存储实现一个静态文件服务器"
+tags: [Azure, Blob 存储, 静态文件, 技术分享, 云存储]
+---
+
 ## 什么是Azure Blob Stoage
 Azure Blob Stoage 是微软Azure的对象存储服务。国内的云一般叫OSS，是一种用来存储非结构化数据的服务，比如音频，视频，图片，文本等等。用户可以通过http在全球任意地方访问这些资源。这些资源可以公开访问，也可以私有访问。看到这些描述立马就想到这这个服务可以用来做静态文件服务。   
 ![Uv3x3T.png](https://s1.ax1x.com/2020/07/24/Uv3x3T.png)    
