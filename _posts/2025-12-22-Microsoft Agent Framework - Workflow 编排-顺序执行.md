@@ -1,4 +1,6 @@
 
+![](https://static.xbaby.xyz/blog/3ccd1007-4b54-44fe-9c17-c1124464ee76.png)
+
 在构建复杂的人工智能应用时，我们常常需要将一个大任务拆解成多个小步骤，并让不同的 AI Agent 按顺序依次处理。Microsoft Agent Framework 提供了一个强大而灵活的工具——Workflow，来帮助我们轻松编排和管理这些 Agent 的协作流程。
 
 今天，我们就来深入探讨一种最基本也最常用的工作流模式：**顺序工作流 (Sequential Workflow)**。
