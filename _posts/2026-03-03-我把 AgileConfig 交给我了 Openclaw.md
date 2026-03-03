@@ -2,7 +2,7 @@
 
 大家都知道 AgileConfig 是我的开源项目，一般有人提新的需求我是不接的。最近有人提了一个 issue（https://github.com/dotnetcore/AgileConfig/issues/232），正好最近在折腾 AI 写代码，于是我就让 openclaw 给我看看这个 issue，让他给我出出主意。
 
-## 这个主意是如何？
+## 方案设计
 原本以为它会顺着 issue 作者的思路出个方案。事实上它给出的建议远远要比 issue 上原来的想法高级。
 Openclaw 给我设计了一个 Sync Plugin 机制，核心思路是让 AgileConfig 在保持原有配置中心角色的同时，能够将配置变更推送到外部存储系统。
 这个方案有点惊艳到我了。但是 AI 也不是完美无缺。比如它就没想到同步失败怎么处理。再跟它讨论几轮之后，最终确认了方案。   
@@ -46,7 +46,7 @@ Openclaw 给我设计了一个 Sync Plugin 机制，核心思路是让 AgileConf
 ```
 
 
-## Openclaw 如何实现这个设计？
+## 代码实现
 
 接下来，我让 Openclaw 按照这个设计思路去实现代码。整个过程我都是口头描述需求，Openclaw 负责具体的编码工作。这没啥可说的，哗哗哗就写出来了。这个生产力简直了。
 
